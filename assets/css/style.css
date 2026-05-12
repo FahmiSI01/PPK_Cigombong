@@ -1,0 +1,846 @@
+[x-cloak]{
+  display:none !important;
+}
+
+html,
+body{
+  max-width:100%;
+  overflow-x:hidden;
+  scroll-behavior:smooth;
+  font-family:'Plus Jakarta Sans',sans-serif;
+  background:#0f0f0f;
+}
+
+.font-play{
+  font-family:'Play',sans-serif;
+}
+
+/* ===================================================== */
+/* EFFECT */
+/* ===================================================== */
+
+.glass{
+  background:rgba(255,255,255,.03);
+  backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,.1);
+}
+
+.glow-red:hover{
+  box-shadow:0 0 20px rgba(185,28,28,.4);
+}
+
+.logo-glow{
+  filter:drop-shadow(0 0 15px rgba(220,38,38,.6));
+}
+
+.pattern-bg{
+  background-image:
+    radial-gradient(rgba(220,38,38,.1) 1px,transparent 1px);
+
+  background-size:30px 30px;
+}
+
+.animate-gradient{
+  background:
+    linear-gradient(
+      -45deg,
+      #000000,
+      #450a0a,
+      #7f1d1d,
+      #000000
+    );
+
+  background-size:400% 400%;
+  animation:gradient 15s ease infinite;
+}
+
+@keyframes gradient{
+  0%{
+    background-position:0% 50%;
+  }
+
+  50%{
+    background-position:100% 50%;
+  }
+
+  100%{
+    background-position:0% 50%;
+  }
+}
+
+.floating{
+  animation:floating 3s ease-in-out infinite;
+}
+
+@keyframes floating{
+  0%,100%{
+    transform:translateY(0);
+  }
+
+  50%{
+    transform:translateY(-15px);
+  }
+}
+
+/* ===================================================== */
+/* CARD */
+/* ===================================================== */
+
+.card{
+  position:relative;
+
+  width:120px;
+  height:120px;
+
+  margin:auto;
+
+  overflow:hidden;
+  border-radius:20px;
+
+  background:rgba(255,255,255,.05);
+  border:2px solid rgba(220,38,38,.5);
+
+  transition:.4s;
+}
+
+.card img{
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  filter:grayscale(100%);
+  transition:.5s;
+}
+
+.card:hover img,
+.card:active img{
+  transform:scale(1.1);
+  filter:grayscale(0);
+}
+
+.card::after{
+  content:"";
+
+  position:absolute;
+  inset:0;
+
+  opacity:0;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(0,0,0,.8),
+      transparent
+    );
+
+  transition:.4s;
+}
+
+.group:hover .card::after{
+  opacity:1;
+}
+
+.group:hover{
+  transform:translateY(-4px);
+}
+
+h4{
+  margin-top:6px;
+
+  color:white;
+  font-size:12px;
+  font-weight:bold;
+}
+
+p{
+  color:#ef4444;
+  font-size:10px;
+}
+
+/* ===================================================== */
+/* SWIPER */
+/* ===================================================== */
+
+.swiper{
+  padding-bottom:50px;
+}
+
+.pengurusSwiper{
+  overflow:visible;
+}
+
+.swiper-pagination{
+  bottom:0 !important;
+}
+
+.swiper-pagination-bullet{
+  width:8px;
+  height:8px;
+
+  opacity:.4;
+  background:white !important;
+}
+
+.swiper-pagination-bullet-active{
+  width:24px;
+
+  opacity:1;
+
+  background:#dc2626 !important;
+  border-radius:999px;
+}
+
+.swiper-button-next,
+.swiper-button-prev{
+  width:52px;
+  height:52px;
+
+  border-radius:999px;
+
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.15);
+
+  backdrop-filter:blur(10px);
+
+  transition:.3s;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover{
+  background:rgba(220,38,38,.2);
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after{
+  font-size:18px;
+  font-weight:bold;
+}
+
+/* ===================================================== */
+/* CUSTOM SCROLL */
+/* ===================================================== */
+
+.custom-scroll{
+  scroll-behavior:smooth;
+}
+
+.custom-scroll::-webkit-scrollbar{
+  width:4px;
+}
+
+.custom-scroll::-webkit-scrollbar-track{
+  background:transparent;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb{
+  border-radius:10px;
+  background:rgba(220,38,38,.5);
+}
+
+/* ===================================================== */
+/* ANIMATION */
+/* ===================================================== */
+
+.card-anim{
+  opacity:0;
+  transform:translateY(15px);
+
+  animation:fadeUp .6s ease forwards;
+}
+
+@keyframes fadeUp{
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+@keyframes fadeMobile{
+  from{
+    opacity:0;
+    transform:translateY(20px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+/* ===================================================== */
+/* DESKTOP LAYOUT */
+/* ===================================================== */
+
+.desktop-layout{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  align-items:center;
+  gap:24px;
+}
+
+.desktop-five{
+  max-width:1100px;
+  margin:auto;
+}
+
+.pengurus-card{
+  position:relative;
+
+  width:240px;
+  height:320px;
+
+  overflow:hidden;
+  border-radius:24px;
+
+  background:#111;
+  border:1px solid #444;
+
+  transition:.4s;
+}
+
+.pengurus-card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 20px 40px rgba(255,0,0,.2);
+}
+
+.pengurus-card img{
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+  transition:.5s;
+}
+
+.pengurus-card:hover img{
+  transform:scale(1.08);
+}
+
+.overlay{
+  position:absolute;
+  inset:0;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:end;
+
+  padding:20px;
+
+  background:
+    linear-gradient(
+      to top,
+      #000,
+      transparent
+    );
+}
+
+.overlay h4{
+  color:white;
+  font-size:15px;
+  font-weight:700;
+}
+
+.overlay p{
+  color:#ef4444;
+  font-weight:600;
+}
+
+/* ===================================================== */
+/* JUDUL SLIDE */
+/* ===================================================== */
+
+.judul-slide{
+  position:relative;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:16px;
+
+  margin-bottom:40px;
+
+  text-align:center;
+  text-transform:uppercase;
+  letter-spacing:1px;
+
+  color:white;
+  font-size:26px;
+  font-weight:700;
+}
+
+.judul-slide::before,
+.judul-slide::after{
+  content:"";
+
+  width:60px;
+  height:2px;
+}
+
+.judul-slide::before{
+  background:
+    linear-gradient(
+      to right,
+      transparent,
+      #dc2626
+    );
+}
+
+.judul-slide::after{
+  background:
+    linear-gradient(
+      to left,
+      transparent,
+      #dc2626
+    );
+}
+
+/* ===================================================== */
+/* MOBILE */
+/* ===================================================== */
+
+@media(max-width:768px){
+
+  #pengurus{
+    padding-top:70px;
+    padding-bottom:70px;
+  }
+
+  .desktop-layout{
+    display:none;
+  }
+
+  .pengurusSwiper{
+    overflow:visible;
+  }
+
+  .swiper-slide{
+    min-height:auto;
+
+    opacity:.4;
+    transform:scale(.92);
+
+    transition:.4s;
+  }
+
+  .swiper-slide-active{
+    opacity:1;
+    transform:scale(1);
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev{
+    transform:scale(.7);
+  }
+
+  .judul-slide{
+    gap:10px;
+
+    margin-bottom:28px;
+
+    font-size:18px;
+  }
+
+  .judul-slide::before,
+  .judul-slide::after{
+    width:30px;
+  }
+
+  /* MOBILE LAYOUT */
+
+  .mobile-layout{
+    position:relative;
+    display:block;
+
+    padding-left:10px;
+  }
+
+.mobile-layout::before {
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: none;
+}
+
+.mobile-item::before {
+  background: rgba(220, 38, 38, 0.4); /* lebih redup */
+  box-shadow: none;
+}
+
+.mobile-line {
+  background: linear-gradient(to bottom, rgba(220,38,38,.3), transparent);
+}
+
+  .mobile-wrapper{
+    position:relative;
+
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+  }
+
+  /* MOBILE CARD */
+
+  .mobile-item{
+    position:relative;
+
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    padding:8px;
+
+    overflow:hidden;
+    border-radius:16px;
+
+    background:rgba(255,255,255,.03);
+    border:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(10px);
+
+    animation:fadeMobile .5s ease;
+    transition:.3s;
+  }
+
+  .mobile-item:nth-child(1){
+    animation-delay:.1s;
+  }
+
+  .mobile-item:nth-child(2){
+    animation-delay:.2s;
+  }
+
+  .mobile-item:nth-child(3){
+    animation-delay:.3s;
+  }
+
+  .mobile-item:nth-child(4){
+    animation-delay:.4s;
+  }
+
+  .mobile-item:nth-child(5){
+    animation-delay:.5s;
+  }
+
+  .mobile-item:hover{
+    transform:translateY(-4px);
+
+    border-color:rgba(220,38,38,.25);
+
+    box-shadow:
+      0 20px 40px rgba(0,0,0,.45),
+      0 0 30px rgba(220,38,38,.12);
+  }
+
+  .mobile-item:active{
+    transform:scale(.97);
+  }
+
+  /* MOBILE IMAGE */
+
+  .mobile-image{
+    position:relative;
+
+    width:72px;
+    height:82px;
+
+    margin-left:18px;
+
+    overflow:hidden;
+    border-radius:12px;
+
+    flex-shrink:0;
+  }
+
+  .mobile-image img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+    transition:.4s;
+  }
+
+  .mobile-image::after{
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    pointer-events:none;
+
+    background:
+      linear-gradient(
+        to top,
+        rgba(0,0,0,.85),
+        rgba(0,0,0,.2),
+        transparent
+      );
+  }
+
+  .mobile-item:hover .mobile-image img{
+    transform:scale(1.08);
+  }
+
+  /* MOBILE CONTENT */
+
+  .mobile-content{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+  }
+
+  .mobile-content span{
+    display:inline-block;
+    width:fit-content;
+
+    margin-bottom:5px;
+
+    padding:4px 10px;
+
+    border-radius:999px;
+
+    background:rgba(220,38,38,.15);
+    border:1px solid rgba(220,38,38,.25);
+
+    color:#ff5c5c;
+    font-size:10px;
+    font-weight:700;
+  }
+
+  .mobile-content h4{
+    color:white;
+
+    font-size:13px;
+    font-weight:700;
+    line-height:1.3;
+  }
+}
+
+/* ===================================================== */
+/* DESKTOP ONLY */
+/* ===================================================== */
+
+@media(min-width:769px){
+
+  .mobile-layout{
+    display:none;
+  }
+
+}
+
+@media(min-width:768px){
+
+  .pengurus-card{
+    width:170px;
+    height:250px;
+  }
+
+}
+
+@media(min-width:1280px){
+
+  .pengurus-card{
+    width:180px;
+    height:260px;
+  }
+
+}
+
+/* ===================================================== */
+/* MOBILE CARD WIDTH FIX */
+/* ===================================================== */
+
+@media(max-width:768px){
+
+  /* AREA SWIPER */
+  .pengurusSwiper{
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  /* CARD */
+  .mobile-item{
+    width: calc(100% - 55px);
+
+    margin-left: auto;
+    margin-right: auto;
+
+    padding: 8px 10px;
+
+    border-radius: 16px;
+  }
+
+  /* FOTO */
+  .mobile-image{
+    width: 64px;
+    height: 78px;
+
+    margin-left: 14px;
+  }
+
+  /* CONTENT */
+  .mobile-content span{
+    font-size: 9px;
+    padding: 4px 8px;
+  }
+
+  .mobile-content h4{
+    font-size: 12px;
+    line-height: 1.25;
+  }
+
+  /* BUTTON */
+  .swiper-button-next,
+  .swiper-button-prev{
+    width: 38px;
+    height: 38px;
+
+    background: rgba(255,255,255,.06);
+    backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255,255,255,.1);
+  }
+
+  .swiper-button-next{
+    right: -2px;
+  }
+
+  .swiper-button-prev{
+    left: -2px;
+  }
+
+  .swiper-button-next::after,
+  .swiper-button-prev::after{
+    font-size: 12px;
+  }
+
+}
+
+/* ========================= */
+/* GLOBAL SECTION STYLE FIX */
+/* ========================= */
+
+section{
+  position:relative;
+  overflow:hidden;
+}
+
+/* ========================= */
+/* ANIMATED BACKGROUND BASE */
+/* ========================= */
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-2;
+
+  background:
+    radial-gradient(circle at 20% 20%, rgba(220,38,38,.25), transparent 40%),
+    radial-gradient(circle at 80% 30%, rgba(255,255,255,.05), transparent 40%),
+    radial-gradient(circle at 50% 80%, rgba(185,28,28,.18), transparent 45%);
+
+  animation:bgMove 12s ease-in-out infinite;
+  filter:blur(60px);
+}
+
+@keyframes bgMove{
+  0%{
+    transform:translate(0,0) scale(1);
+  }
+  50%{
+    transform:translate(-20px,30px) scale(1.1);
+  }
+  100%{
+    transform:translate(0,0) scale(1);
+  }
+}
+
+/* ========================= */
+/* FLOATING PARTICLES */
+/* ========================= */
+
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-1;
+
+  background-image:
+    radial-gradient(rgba(255,255,255,.08) 1px, transparent 1px);
+
+  background-size:40px 40px;
+
+  animation:floatGrid 20s linear infinite;
+  opacity:.2;
+}
+
+@keyframes floatGrid{
+  from{
+    transform:translateY(0);
+  }
+  to{
+    transform:translateY(-40px);
+  }
+}
+
+/* ========================= */
+/* GLOBAL SECTION STYLE FIX */
+/* ========================= */
+
+section{
+  position:relative;
+  overflow:hidden;
+}
+
+
+/* ========================= */
+/* SELEKSI - TECH / SYSTEM LOOK */
+/* ========================= */
+
+#seleksi{
+  background:
+    linear-gradient(135deg, #0a0a0a, #111111, #0a0a0a);
+}
+
+#seleksi::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      rgba(220,38,38,.05),
+      rgba(220,38,38,.05) 1px,
+      transparent 1px,
+      transparent 40px
+    );
+  opacity:.4;
+}
+
+/* ========================= */
+/* PENGURUS - SPOTLIGHT SHOWCASE */
+/* ========================= */
+
+#pengurus{
+  background:
+    radial-gradient(circle at top, rgba(220,38,38,.18), transparent 50%),
+    radial-gradient(circle at bottom, rgba(255,255,255,.04), transparent 60%),
+    #0b0b0b;
+}
+
+/* ========================= */
+/* KONTAK - SOFT DARK CLEAN */
+/* ========================= */
+
+#kontak{
+  background:
+    linear-gradient(180deg, #0b0b0b, #000000);
+}
+
+#kontak::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(220,38,38,.15), transparent 40%);
+  opacity:.5;
+}
