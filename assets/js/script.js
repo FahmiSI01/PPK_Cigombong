@@ -85,10 +85,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (Array.isArray(content)) {
             modalBody.innerHTML = `
-                <ul class="list-disc pl-5 space-y-1 text-gray-300">
-                    ${content.map(item => `<li>${item}</li>`).join('')}
-                </ul>
-            `;
+    <div class="space-y-3 text-gray-300">
+        ${content.map(item => `
+            <div class="leading-relaxed">${item}</div>
+        `).join('')}
+    </div>
+`;
         } else {
             modalBody.innerHTML = `<p class="text-gray-300">${content}</p>`;
         }
